@@ -91,7 +91,7 @@ local theme = lush(function(injected_functions)
     -- MsgSeparator { }, -- Separator for scrolled messages, `msgsep` flag of 'display'
     -- MoreMsg      { }, -- |more-prompt|
     -- NonText      { }, -- '@' at the end of the window, characters from 'showbreak' and other characters that do not really exist in the text (e.g., ">" displayed when a double-wide character doesn't fit at the end of the line). See also |hl-EndOfBuffer|.
-    -- Normal       { }, -- Normal text
+    Normal          { bg = "#263546", fg = "#fffefe" }, -- Normal text
     -- NormalFloat  { }, -- Normal text in floating windows.
     -- NormalNC     { }, -- normal text in non-current windows
     -- Pmenu        { }, -- Popup menu: Normal item.
@@ -115,7 +115,7 @@ local theme = lush(function(injected_functions)
     -- Visual       { }, -- Visual mode selection
     -- VisualNOS    { }, -- Visual mode selection when vim is "Not Owning the Selection".
     -- WarningMsg   { }, -- Warning messages
-    -- Whitespace   { }, -- "nbsp", "space", "tab" and "trail" in 'listchars'
+    Whitespace      { fg = Normal.fg.darken(40) }, -- "nbsp", "space", "tab" and "trail" in 'listchars'
     -- Winseparator { }, -- Separator between window splits. Inherts from |hl-VertSplit| by default, which it will replace eventually.
     -- WildMenu     { }, -- Current match in 'wildmenu' completion
 
@@ -127,7 +127,7 @@ local theme = lush(function(injected_functions)
     --
     -- Uncomment and edit if you want more specific syntax highlighting.
 
-    -- Comment        { }, -- Any comment
+    Comment        { Whitespace, gui="italic" }, -- Any comment
 
     -- Constant       { }, -- (*) Any constant
     -- String         { }, --   A string constant: "this is a string"
@@ -136,7 +136,7 @@ local theme = lush(function(injected_functions)
     -- Boolean        { }, --   A boolean constant: TRUE, false
     -- Float          { }, --   A floating point constant: 2.3e10
 
-    -- Identifier     { }, -- (*) Any variable name
+    Identifier        { fg = Normal }, -- (*) Any variable name
     -- Function       { }, --   Function name (also: methods for classes)
 
     -- Statement      { }, -- (*) Any statement
@@ -153,7 +153,7 @@ local theme = lush(function(injected_functions)
     -- Macro          { }, --   Same as Define
     -- PreCondit      { }, --   Preprocessor #if, #else, #endif, etc.
 
-    -- Type           { }, -- (*) int, long, char, etc.
+    Type              { fg = "#31e7d9" }, -- (*) int, long, char, etc.
     -- StorageClass   { }, --   static, register, volatile, etc.
     -- Structure      { }, --   struct, union, enum, etc.
     -- Typedef        { }, --   A typedef
