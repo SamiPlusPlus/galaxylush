@@ -115,7 +115,7 @@ local theme = lush(function(injected_functions)
     -- Visual       { }, -- Visual mode selection
     -- VisualNOS    { }, -- Visual mode selection when vim is "Not Owning the Selection".
     -- WarningMsg   { }, -- Warning messages
-    Whitespace      { fg = Normal.fg.darken(40) }, -- "nbsp", "space", "tab" and "trail" in 'listchars'
+    Whitespace      { fg = Normal.bg }, -- "nbsp", "space", "tab" and "trail" in 'listchars'
     -- Winseparator { }, -- Separator between window splits. Inherts from |hl-VertSplit| by default, which it will replace eventually.
     -- WildMenu     { }, -- Current match in 'wildmenu' completion
 
